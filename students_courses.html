@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students & Courses</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+       
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Students & Courses Data Display</h1>
+
+<h3>SQL Query</h3>
+       <pre class="sql-block">
+          SELECT student_id, first_name, email, Phone 
+          FROM students;
+       </pre>
+
+
+
+    <h2 class="section-title">Students</h2>
+    <table>
+        <tr>
+    <th>student_id</th>
+    <th>Students_name</th>
+    <th>Phone</th>
+    <th>email</th>
+</tr>
+
+<tr>
+    <td>11</td>
+    <td>M Ahmed</td>
+    <td>03143287213</td>
+    <td>M.Ahmed123@gmail.com</td>
+</tr>
+
+<tr>
+    <td>22</td>
+    <td>Aqib Javed</td>
+    <td>03456789011</td>
+    <td>A.javed07@gmail.com</td>
+</tr>
+
+<tr>
+    <td>33</td>
+    <td>Eman Ali</td>
+    <td>03123456789</td>
+    <td>Emanali222@yahoo.com</td>
+</tr>
+
+<tr>
+    <td>44</td>
+    <td>Saba Khan</td>
+    <td>03432589768</td>
+    <td>sabak.33@yahoo.com</td>
+</tr>
+
+<tr>
+    <td>55</td>
+    <td>Babar Ali</td>
+    <td>03992244881</td>
+    <td>babarA420@gmail.com</td>
+</tr>
+
+    </table>
+
+    <h3>SQL Query</h3>
+<pre class="sql-block">
+SELECT idcourses, Course_name, Description
+FROM courses;
+    </pre>
+    <h2 class="section-title">Courses</h2>
+
+
+    <table>
+        <tr>
+    <th>idcourses</th>
+    <th>Course_name</th>
+    <th>Description</th>
+</tr>
+
+<tr>
+    <td>1</td>
+    <td>Databases</td>
+    <td>Learn SQL and relational database concepts.</td>
+</tr>
+
+<tr>
+    <td>2</td>
+    <td>Python Programming</td>
+    <td>A beginner course in Python programming.</td>
+</tr>
+
+<tr>
+    <td>3</td>
+    <td>Web Development</td>
+    <td>Covers HTML, CSS, JavaScript basics.</td>
+</tr>
+
+<tr>
+    <td>4</td>
+    <td>Data Structures</td>
+    <td>Learn common data structures in CS.</td>
+</tr>
+
+<tr>
+    <td>5</td>
+    <td>Networking Basics</td>
+    <td>Introduction to computer networks.</td>
+</tr>
+
+    </table>
+<h3>SQL Query</h3>
+
+    <pre class="sql-block">
+SELECT s.student_name, c.course_name
+FROM registrations r
+JOIN students s ON r.student_id = s.student_id
+JOIN courses c ON r.idcourses = c.idcourses
+ORDER BY s.student_id;
+    </pre>
+   
+    <h2 class="section-title">Student Course Registrations</h2>
+
+
+    <table>
+    <tr>
+        <th>student_name</th>
+        <th>course_name</th>
+    </tr>
+
+    <tr>
+        <td>M Ahmed</td>
+        <td>Web Development</td>
+    </tr>
+
+    <tr>
+        <td>Saba Khan</td>
+        <td>Python Programming</td>
+    </tr>
+
+    <tr>
+        <td>Babar Ali</td>
+        <td>Data Structures</td>
+    </tr>
+
+      <tr>
+        <td>Eman Ali</td>
+        <td>Databases</td>
+    </tr>
+
+      <tr>
+        <td>Aqib Javed</td>
+        <td>Networking Basics</td>
+    </tr>
+</table>
+
+        
+</body>
+</html>
